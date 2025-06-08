@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, Server, Shield, Zap, Clock, Globe, Users, HeadphonesIcon, Gamepad2, HardDrive } from "lucide-react";
+import { Check, Server, Shield, Zap, Gamepad2 } from "lucide-react";
 
 const Index = () => {
   const features = [
@@ -266,7 +266,7 @@ const Index = () => {
               <p className="text-gray-600">Uptime Guarantee</p>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">< 60s</div>
+              <div className="text-4xl font-bold mb-2">&lt; 60s</div>
               <p className="text-gray-600">Deployment Time</p>
             </div>
             <div>
