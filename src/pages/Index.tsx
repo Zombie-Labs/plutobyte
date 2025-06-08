@@ -123,66 +123,86 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
       {/* Header */}
-      <header className="border-b border-black">
+      <header className="border-b border-slate-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold">PlutoByte™</div>
-          <nav className="hidden md:flex space-x-6">
-            <a href="#features" className="hover:text-gray-600 transition-colors">Features</a>
-            <a href="#pricing" className="hover:text-gray-600 transition-colors">Pricing</a>
-            <a href="#games" className="hover:text-gray-600 transition-colors">Games</a>
-            <a href="#testimonials" className="hover:text-gray-600 transition-colors">Reviews</a>
+          <div className="text-2xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
+            PlutoByte™
+          </div>
+          <nav className="hidden md:flex space-x-8">
+            <a href="#features" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Features</a>
+            <a href="#pricing" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Pricing</a>
+            <a href="#games" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Games</a>
+            <a href="#testimonials" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Reviews</a>
           </nav>
-          <Button variant="outline" className="bg-white text-black border-black hover:bg-gray-100">
+          <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400">
             Login
           </Button>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            VPS & Game Server
+      <section className="py-24 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/30"></div>
+        <div className="container mx-auto text-center relative">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent">
+              VPS & Game Server
+            </span>
             <br />
-            <span className="text-gray-600">Hosting Excellence</span>
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Hosting Excellence
+            </span>
           </h1>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-700">
+          <p className="text-xl mb-10 max-w-3xl mx-auto text-slate-600 leading-relaxed">
             Deploy powerful VPS instances and game servers in seconds. Experience unmatched performance with DDoS protection and 24/7 support.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-black border-2 border-black hover:bg-gray-100 px-8 py-3">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Button size="lg" className="bg-slate-900 text-white hover:bg-slate-800 px-8 py-4 text-lg shadow-lg">
               Deploy VPS Now
             </Button>
-            <Button variant="outline" size="lg" className="bg-white text-black border-black hover:bg-gray-100 px-8 py-3">
+            <Button variant="outline" size="lg" className="border-slate-300 text-slate-700 hover:bg-slate-50 px-8 py-4 text-lg">
               Browse Game Servers
             </Button>
           </div>
-          <p className="mt-4 text-sm text-gray-600">Instant deployment • DDoS protection included • 99.9% uptime</p>
+          <div className="flex items-center justify-center gap-6 text-sm text-slate-500">
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              Instant deployment
+            </span>
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              DDoS protection included
+            </span>
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+              99.9% uptime
+            </span>
+          </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-gray-50">
+      <section id="features" className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Choose PlutoByte™?</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">Why Choose PlutoByte™?</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Enterprise-grade infrastructure optimized for VPS hosting and game servers with unbeatable performance.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="text-center border-black">
-                <CardHeader>
-                  <div className="mx-auto mb-4 text-black">
+              <Card key={index} className="text-center border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-slate-50">
+                <CardHeader className="pb-4">
+                  <div className="mx-auto mb-6 text-slate-700 bg-slate-100 p-4 rounded-full w-fit">
                     {feature.icon}
                   </div>
-                  <CardTitle className="text-black">{feature.title}</CardTitle>
+                  <CardTitle className="text-slate-900 text-xl">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700">{feature.description}</p>
+                  <p className="text-slate-600 leading-relaxed">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -191,40 +211,48 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20">
+      <section id="pricing" className="py-24 bg-gradient-to-br from-slate-50 to-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">VPS & Game Server Plans</h2>
-            <p className="text-xl text-gray-600">Choose the perfect server for your needs</p>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">VPS & Game Server Plans</h2>
+            <p className="text-xl text-slate-600">Choose the perfect server for your needs</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {plans.map((plan, index) => (
-              <Card key={index} className={`relative border-2 ${plan.popular ? 'border-black' : 'border-gray-300'}`}>
+              <Card key={index} className={`relative border-2 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 ${
+                plan.popular 
+                  ? 'border-blue-500 shadow-lg bg-gradient-to-br from-blue-50 to-white' 
+                  : 'border-slate-200 hover:border-slate-300 bg-white'
+              }`}>
                 {plan.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-black text-white">
+                  <Badge className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1 text-sm font-medium">
                     Most Popular
                   </Badge>
                 )}
-                <CardHeader className="text-center">
-                  <div className="text-sm text-gray-500 uppercase tracking-wide">{plan.type}</div>
-                  <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
-                  <CardDescription className="text-gray-600">{plan.description}</CardDescription>
-                  <div className="mt-4">
-                    <span className="text-4xl font-bold">{plan.price}</span>
-                    <span className="text-gray-600">{plan.period}</span>
+                <CardHeader className="text-center pb-6">
+                  <div className="text-sm text-slate-500 uppercase tracking-widest font-semibold">{plan.type}</div>
+                  <CardTitle className="text-2xl font-bold text-slate-900 mt-2">{plan.name}</CardTitle>
+                  <CardDescription className="text-slate-600 mt-2">{plan.description}</CardDescription>
+                  <div className="mt-6">
+                    <span className="text-5xl font-bold text-slate-900">{plan.price}</span>
+                    <span className="text-slate-600 text-lg">{plan.period}</span>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-4 mb-8">
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
-                        <Check className="h-5 w-5 text-green-600 mr-3" />
-                        <span className="text-gray-700">{feature}</span>
+                        <Check className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                        <span className="text-slate-700">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Button 
-                    className={`w-full ${plan.popular ? 'bg-black text-white hover:bg-gray-800' : 'bg-white text-black border-2 border-black hover:bg-gray-100'}`}
+                    className={`w-full py-3 text-lg font-medium transition-all duration-300 ${
+                      plan.popular 
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg' 
+                        : 'bg-slate-900 text-white hover:bg-slate-800'
+                    }`}
                   >
                     Deploy {plan.name}
                   </Button>
@@ -236,16 +264,16 @@ const Index = () => {
       </section>
 
       {/* Supported Games Section */}
-      <section id="games" className="py-20 bg-gray-50">
+      <section id="games" className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Supported Games</h2>
-            <p className="text-xl text-gray-600">One-click installation for popular games</p>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">Supported Games</h2>
+            <p className="text-xl text-slate-600">One-click installation for popular games</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 text-center">
             {gameSupport.map((game, index) => (
-              <div key={index} className="bg-white border border-gray-300 rounded-lg p-4 hover:border-black transition-colors">
-                <span className="text-gray-700 font-medium">{game}</span>
+              <div key={index} className="bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                <span className="text-slate-700 font-medium">{game}</span>
               </div>
             ))}
           </div>
@@ -253,50 +281,50 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20">
+      <section className="py-24 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-16">Trusted by Gamers & Developers</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-20">Trusted by Gamers & Developers</h2>
           <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-4xl font-bold mb-2">10,000+</div>
-              <p className="text-gray-600">Active Servers</p>
+            <div className="group">
+              <div className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">10,000+</div>
+              <p className="text-slate-300 text-lg">Active Servers</p>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">99.9%</div>
-              <p className="text-gray-600">Uptime Guarantee</p>
+            <div className="group">
+              <div className="text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">99.9%</div>
+              <p className="text-slate-300 text-lg">Uptime Guarantee</p>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">&lt; 60s</div>
-              <p className="text-gray-600">Deployment Time</p>
+            <div className="group">
+              <div className="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">&lt; 60s</div>
+              <p className="text-slate-300 text-lg">Deployment Time</p>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">24/7</div>
-              <p className="text-gray-600">Expert Support</p>
+            <div className="group">
+              <div className="text-5xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">24/7</div>
+              <p className="text-slate-300 text-lg">Expert Support</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-gray-50">
+      <section id="testimonials" className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">What Our Customers Say</h2>
-            <p className="text-xl text-gray-600">Real feedback from gamers and developers</p>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">What Our Customers Say</h2>
+            <p className="text-xl text-slate-600">Real feedback from gamers and developers</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-black">
-                <CardContent className="pt-6">
-                  <div className="flex mb-4">
+              <Card key={index} className="border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-slate-50">
+                <CardContent className="pt-8">
+                  <div className="flex mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <span key={i} className="text-yellow-400">★</span>
+                      <span key={i} className="text-yellow-400 text-xl">★</span>
                     ))}
                   </div>
-                  <p className="text-gray-700 mb-4 italic">"{testimonial.quote}"</p>
+                  <p className="text-slate-700 mb-6 italic text-lg leading-relaxed">"{testimonial.quote}"</p>
                   <div>
-                    <div className="font-semibold">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.company}</div>
+                    <div className="font-semibold text-slate-900 text-lg">{testimonial.name}</div>
+                    <div className="text-slate-600">{testimonial.company}</div>
                   </div>
                 </CardContent>
               </Card>
@@ -306,58 +334,59 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-black text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">Ready to Deploy Your Server?</h2>
-          <p className="text-xl mb-8 text-gray-300">Join thousands of satisfied customers today</p>
+      <section className="py-24 bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        <div className="container mx-auto px-4 text-center relative">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Deploy Your Server?</h2>
+          <p className="text-xl mb-10 text-slate-200 max-w-2xl mx-auto">Join thousands of satisfied customers today</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-black hover:bg-gray-100 px-8 py-3">
+            <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 text-lg font-medium shadow-lg">
               Deploy VPS Server
             </Button>
-            <Button variant="outline" size="lg" className="bg-transparent text-white border-white hover:bg-white hover:text-black px-8 py-3">
+            <Button variant="outline" size="lg" className="bg-transparent text-white border-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg font-medium">
               Start Game Server
             </Button>
           </div>
-          <p className="mt-4 text-sm text-gray-400">Instant deployment • No setup fees • 99.9% uptime guarantee</p>
+          <p className="mt-6 text-slate-300">Instant deployment • No setup fees • 99.9% uptime guarantee</p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-50 py-16 border-t border-black">
+      <footer className="bg-slate-50 py-20 border-t border-slate-200">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
-              <h3 className="text-2xl font-bold mb-4">PlutoByte™</h3>
-              <p className="text-gray-600">Professional VPS and game server hosting for gamers and developers worldwide.</p>
+              <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">PlutoByte™</h3>
+              <p className="text-slate-600 leading-relaxed">Professional VPS and game server hosting for gamers and developers worldwide.</p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-600">
-                <li>VPS Hosting</li>
-                <li>Game Servers</li>
-                <li>DDoS Protection</li>
-                <li>Server Management</li>
+              <h4 className="font-semibold mb-6 text-slate-900 text-lg">Services</h4>
+              <ul className="space-y-3 text-slate-600">
+                <li className="hover:text-slate-900 transition-colors cursor-pointer">VPS Hosting</li>
+                <li className="hover:text-slate-900 transition-colors cursor-pointer">Game Servers</li>
+                <li className="hover:text-slate-900 transition-colors cursor-pointer">DDoS Protection</li>
+                <li className="hover:text-slate-900 transition-colors cursor-pointer">Server Management</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-gray-600">
-                <li>Knowledge Base</li>
-                <li>Game Tutorials</li>
-                <li>Server Status</li>
-                <li>Migration Service</li>
+              <h4 className="font-semibold mb-6 text-slate-900 text-lg">Support</h4>
+              <ul className="space-y-3 text-slate-600">
+                <li className="hover:text-slate-900 transition-colors cursor-pointer">Knowledge Base</li>
+                <li className="hover:text-slate-900 transition-colors cursor-pointer">Game Tutorials</li>
+                <li className="hover:text-slate-900 transition-colors cursor-pointer">Server Status</li>
+                <li className="hover:text-slate-900 transition-colors cursor-pointer">Migration Service</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-gray-600">
+              <h4 className="font-semibold mb-6 text-slate-900 text-lg">Contact</h4>
+              <ul className="space-y-3 text-slate-600">
                 <li>Email: support@plutobyte.com</li>
                 <li>Discord: PlutoByte Community</li>
                 <li>Live Chat: 24/7 Available</li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-300 mt-12 pt-8 text-center text-gray-600">
+          <div className="border-t border-slate-200 pt-8 text-center text-slate-600">
             <p>&copy; 2024 PlutoByte™. All rights reserved.</p>
           </div>
         </div>
