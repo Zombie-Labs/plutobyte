@@ -16,10 +16,617 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@plutobyte" />
     <meta name="twitter:image" content="https://cdn.discordapp.com/attachments/1373341481699512371/1375789207418704042/Picsart_25-05-23_11-05-48-777.jpg?ex=68480f0b&is=6846bd8b&hm=a8d76d72de69f50fd211480e3160ffbce491dbbd024de596999bec13f3927d7c&" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .btn {
+        @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+      }
+      .btn-primary {
+        @apply bg-primary text-primary-foreground hover:bg-primary/90;
+      }
+      .btn-outline {
+        @apply border border-input hover:bg-accent hover:text-accent-foreground;
+      }
+      .btn-lg {
+        @apply h-11 px-8 rounded-md;
+      }
+      .card {
+        @apply rounded-lg border bg-card text-card-foreground shadow-sm;
+      }
+      .card-header {
+        @apply flex flex-col space-y-1.5 p-6;
+      }
+      .card-content {
+        @apply p-6 pt-0;
+      }
+      .badge {
+        @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+      }
+    </style>
   </head>
 
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="min-h-screen bg-gradient-to-br from-slate-50 to-white">
+      <!-- Header -->
+      <header class="border-b border-slate-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+          <div class="text-2xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
+            PlutoByte™
+          </div>
+          <nav class="hidden md:flex space-x-8">
+            <a href="#features" class="text-slate-600 hover:text-slate-900 transition-colors font-medium">Features</a>
+            <a href="#pricing" class="text-slate-600 hover:text-slate-900 transition-colors font-medium">Pricing</a>
+            <a href="#games" class="text-slate-600 hover:text-slate-900 transition-colors font-medium">Games</a>
+            <a href="#testimonials" class="text-slate-600 hover:text-slate-900 transition-colors font-medium">Reviews</a>
+          </nav>
+          <button class="btn btn-outline border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400">
+            Login
+          </button>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="py-24 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/30"></div>
+        <div class="container mx-auto text-center relative">
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <span class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent">
+              VPS & Game Server
+            </span>
+            <br />
+            <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Hosting Excellence
+            </span>
+          </h1>
+          <p class="text-xl mb-10 max-w-3xl mx-auto text-slate-600 leading-relaxed">
+            Deploy powerful VPS instances and game servers in seconds. Experience unmatched performance with DDoS protection and 24/7 support.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <button class="btn btn-lg bg-slate-900 text-white hover:bg-slate-800 px-8 py-4 text-lg shadow-lg">
+              Deploy VPS Now
+            </button>
+            <button class="btn btn-outline btn-lg border-slate-300 text-slate-700 hover:bg-slate-50 px-8 py-4 text-lg">
+              Browse Game Servers
+            </button>
+          </div>
+          <div class="flex items-center justify-center gap-6 text-sm text-slate-500">
+            <span class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+              Instant deployment
+            </span>
+            <span class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+              DDoS protection included
+            </span>
+            <span class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+              99.9% uptime
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-slate-900">Why Choose PlutoByte™?</h2>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Enterprise-grade infrastructure optimized for VPS hosting and game servers with unbeatable performance.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="card text-center border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-slate-50">
+              <div class="card-header pb-4">
+                <div class="mx-auto mb-6 text-slate-700 bg-slate-100 p-4 rounded-full w-fit">
+                  <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <h3 class="text-slate-900 text-xl font-semibold">Powerful VPS</h3>
+              </div>
+              <div class="card-content">
+                <p class="text-slate-600 leading-relaxed">High-performance virtual private servers with root access and full control</p>
+              </div>
+            </div>
+
+            <div class="card text-center border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-slate-50">
+              <div class="card-header pb-4">
+                <div class="mx-auto mb-6 text-slate-700 bg-slate-100 p-4 rounded-full w-fit">
+                  <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <h3 class="text-slate-900 text-xl font-semibold">Game Servers</h3>
+              </div>
+              <div class="card-content">
+                <p class="text-slate-600 leading-relaxed">Optimized servers for Minecraft, CS2, Rust, and 100+ other games</p>
+              </div>
+            </div>
+
+            <div class="card text-center border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-slate-50">
+              <div class="card-header pb-4">
+                <div class="mx-auto mb-6 text-slate-700 bg-slate-100 p-4 rounded-full w-fit">
+                  <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                  </svg>
+                </div>
+                <h3 class="text-slate-900 text-xl font-semibold">Instant Setup</h3>
+              </div>
+              <div class="card-content">
+                <p class="text-slate-600 leading-relaxed">Deploy your server in under 60 seconds with our automated platform</p>
+              </div>
+            </div>
+
+            <div class="card text-center border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-slate-50">
+              <div class="card-header pb-4">
+                <div class="mx-auto mb-6 text-slate-700 bg-slate-100 p-4 rounded-full w-fit">
+                  <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <h3 class="text-slate-900 text-xl font-semibold">DDoS Protection</h3>
+              </div>
+              <div class="card-content">
+                <p class="text-slate-600 leading-relaxed">Enterprise-grade DDoS protection included with all servers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section id="pricing" class="py-24 bg-gradient-to-br from-slate-50 to-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-slate-900">VPS & Game Server Plans</h2>
+            <p class="text-xl text-slate-600">Choose the perfect server for your needs</p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- VPS Starter Plan -->
+            <div class="card relative border-2 border-slate-200 hover:border-slate-300 bg-white transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+              <div class="card-header text-center pb-6">
+                <div class="text-sm text-slate-500 uppercase tracking-widest font-semibold">VPS</div>
+                <h3 class="text-2xl font-bold text-slate-900 mt-2">VPS Starter</h3>
+                <p class="text-slate-600 mt-2">Perfect for small projects and development</p>
+                <div class="mt-6">
+                  <span class="text-5xl font-bold text-slate-900">$9.99</span>
+                  <span class="text-slate-600 text-lg">/month</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <ul class="space-y-4 mb-8">
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">2 CPU Cores</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">4GB RAM</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">50GB SSD Storage</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">1TB Bandwidth</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">Root Access</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">DDoS Protection</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">99.9% Uptime</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">24/7 Support</span>
+                  </li>
+                </ul>
+                <button class="btn w-full py-3 text-lg font-medium transition-all duration-300 bg-slate-900 text-white hover:bg-slate-800">
+                  Deploy VPS Starter
+                </button>
+              </div>
+            </div>
+
+            <!-- Game Server Pro Plan (Popular) -->
+            <div class="card relative border-2 border-blue-500 shadow-lg bg-gradient-to-br from-blue-50 to-white transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+              <div class="badge absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1 text-sm font-medium">
+                Most Popular
+              </div>
+              <div class="card-header text-center pb-6">
+                <div class="text-sm text-slate-500 uppercase tracking-widest font-semibold">Game</div>
+                <h3 class="text-2xl font-bold text-slate-900 mt-2">Game Server Pro</h3>
+                <p class="text-slate-600 mt-2">Ideal for gaming communities</p>
+                <div class="mt-6">
+                  <span class="text-5xl font-bold text-slate-900">$19.99</span>
+                  <span class="text-slate-600 text-lg">/month</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <ul class="space-y-4 mb-8">
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">4 CPU Cores</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">8GB RAM</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">100GB NVMe SSD</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">Unlimited Bandwidth</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">Game Panel Access</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">Automated Backups</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">Mod Support</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">Discord Integration</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">Priority Support</span>
+                  </li>
+                </ul>
+                <button class="btn w-full py-3 text-lg font-medium transition-all duration-300 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg">
+                  Deploy Game Server Pro
+                </button>
+              </div>
+            </div>
+
+            <!-- VPS Enterprise Plan -->
+            <div class="card relative border-2 border-slate-200 hover:border-slate-300 bg-white transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+              <div class="card-header text-center pb-6">
+                <div class="text-sm text-slate-500 uppercase tracking-widest font-semibold">VPS</div>
+                <h3 class="text-2xl font-bold text-slate-900 mt-2">VPS Enterprise</h3>
+                <p class="text-slate-600 mt-2">For high-demand applications</p>
+                <div class="mt-6">
+                  <span class="text-5xl font-bold text-slate-900">$39.99</span>
+                  <span class="text-slate-600 text-lg">/month</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <ul class="space-y-4 mb-8">
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">8 CPU Cores</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">16GB RAM</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">200GB NVMe SSD</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">Unlimited Bandwidth</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">Full Root Access</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">Advanced Monitoring</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">Load Balancer Ready</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">Custom OS Images</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">Dedicated Support</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span class="text-slate-700">99.99% SLA</span>
+                  </li>
+                </ul>
+                <button class="btn w-full py-3 text-lg font-medium transition-all duration-300 bg-slate-900 text-white hover:bg-slate-800">
+                  Deploy VPS Enterprise
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Supported Games Section -->
+      <section id="games" class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-slate-900">Supported Games</h2>
+            <p class="text-xl text-slate-600">One-click installation for popular games</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4 text-center">
+            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <span class="text-slate-700 font-medium">Minecraft (Java & Bedrock)</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <span class="text-slate-700 font-medium">Counter-Strike 2</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <span class="text-slate-700 font-medium">Rust</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <span class="text-slate-700 font-medium">Valheim</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <span class="text-slate-700 font-medium">ARK: Survival Evolved</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <span class="text-slate-700 font-medium">Garry's Mod</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <span class="text-slate-700 font-medium">Team Fortress 2</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <span class="text-slate-700 font-medium">Terraria</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <span class="text-slate-700 font-medium">7 Days to Die</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <span class="text-slate-700 font-medium">And 100+ more games</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="py-24 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+          <h2 class="text-4xl md:text-5xl font-bold mb-20">Trusted by Gamers & Developers</h2>
+          <div class="grid md:grid-cols-4 gap-8">
+            <div class="group">
+              <div class="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">10,000+</div>
+              <p class="text-slate-300 text-lg">Active Servers</p>
+            </div>
+            <div class="group">
+              <div class="text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">99.9%</div>
+              <p class="text-slate-300 text-lg">Uptime Guarantee</p>
+            </div>
+            <div class="group">
+              <div class="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">&lt; 60s</div>
+              <p class="text-slate-300 text-lg">Deployment Time</p>
+            </div>
+            <div class="group">
+              <div class="text-5xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">24/7</div>
+              <p class="text-slate-300 text-lg">Expert Support</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-slate-900">What Our Customers Say</h2>
+            <p class="text-xl text-slate-600">Real feedback from gamers and developers</p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="card border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-slate-50">
+              <div class="card-content pt-8">
+                <div class="flex mb-6">
+                  <span class="text-yellow-400 text-xl">★</span>
+                  <span class="text-yellow-400 text-xl">★</span>
+                  <span class="text-yellow-400 text-xl">★</span>
+                  <span class="text-yellow-400 text-xl">★</span>
+                  <span class="text-yellow-400 text-xl">★</span>
+                </div>
+                <p class="text-slate-700 mb-6 italic text-lg leading-relaxed">"PlutoByte™ VPS hosting is incredible. Our Minecraft server runs flawlessly with zero lag for 200+ players."</p>
+                <div>
+                  <div class="font-semibold text-slate-900 text-lg">Alex Rodriguez</div>
+                  <div class="text-slate-600">Gaming Community</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-slate-50">
+              <div class="card-content pt-8">
+                <div class="flex mb-6">
+                  <span class="text-yellow-400 text-xl">★</span>
+                  <span class="text-yellow-400 text-xl">★</span>
+                  <span class="text-yellow-400 text-xl">★</span>
+                  <span class="text-yellow-400 text-xl">★</span>
+                  <span class="text-yellow-400 text-xl">★</span>
+                </div>
+                <p class="text-slate-700 mb-6 italic text-lg leading-relaxed">"Migrated our applications to PlutoByte™ VPS. The performance boost was immediate and support is amazing."</p>
+                <div>
+                  <div class="font-semibold text-slate-900 text-lg">Sarah Chen</div>
+                  <div class="text-slate-600">Development Team</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-slate-50">
+              <div class="card-content pt-8">
+                <div class="flex mb-6">
+                  <span class="text-yellow-400 text-xl">★</span>
+                  <span class="text-yellow-400 text-xl">★</span>
+                  <span class="text-yellow-400 text-xl">★</span>
+                  <span class="text-yellow-400 text-xl">★</span>
+                  <span class="text-yellow-400 text-xl">★</span>
+                </div>
+                <p class="text-slate-700 mb-6 italic text-lg leading-relaxed">"Best game server hosting I've used. Easy setup, great performance, and the DDoS protection actually works!"</p>
+                <div>
+                  <div class="font-semibold text-slate-900 text-lg">Mike Johnson</div>
+                  <div class="text-slate-600">Rust Server Owner</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-24 bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20"></div>
+        <div class="container mx-auto px-4 text-center relative">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Deploy Your Server?</h2>
+          <p class="text-xl mb-10 text-slate-200 max-w-2xl mx-auto">Join thousands of satisfied customers today</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="btn btn-lg bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 text-lg font-medium shadow-lg">
+              Deploy VPS Server
+            </button>
+            <button class="btn btn-outline btn-lg bg-transparent text-white border-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg font-medium">
+              Start Game Server
+            </button>
+          </div>
+          <p class="mt-6 text-slate-300">Instant deployment • No setup fees • 99.9% uptime guarantee</p>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-slate-50 py-20 border-t border-slate-200">
+        <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-4 gap-8 mb-12">
+            <div>
+              <h3 class="text-2xl font-bold mb-6 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">PlutoByte™</h3>
+              <p class="text-slate-600 leading-relaxed">Professional VPS and game server hosting for gamers and developers worldwide.</p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-6 text-slate-900 text-lg">Services</h4>
+              <ul class="space-y-3 text-slate-600">
+                <li class="hover:text-slate-900 transition-colors cursor-pointer">VPS Hosting</li>
+                <li class="hover:text-slate-900 transition-colors cursor-pointer">Game Servers</li>
+                <li class="hover:text-slate-900 transition-colors cursor-pointer">DDoS Protection</li>
+                <li class="hover:text-slate-900 transition-colors cursor-pointer">Server Management</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-6 text-slate-900 text-lg">Support</h4>
+              <ul class="space-y-3 text-slate-600">
+                <li class="hover:text-slate-900 transition-colors cursor-pointer">Knowledge Base</li>
+                <li class="hover:text-slate-900 transition-colors cursor-pointer">Game Tutorials</li>
+                <li class="hover:text-slate-900 transition-colors cursor-pointer">Server Status</li>
+                <li class="hover:text-slate-900 transition-colors cursor-pointer">Migration Service</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-6 text-slate-900 text-lg">Contact</h4>
+              <ul class="space-y-3 text-slate-600">
+                <li>Email: support@plutobyte.com</li>
+                <li>Discord: PlutoByte Community</li>
+                <li>Live Chat: 24/7 Available</li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-t border-slate-200 pt-8 text-center text-slate-600">
+            <p>&copy; 2024 PlutoByte™. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Simple smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Add click handlers for buttons (you can customize these)
+      document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', function() {
+          console.log('Button clicked:', this.textContent);
+          // Add your custom functionality here
+        });
+      });
+    </script>
   </body>
 </html>
